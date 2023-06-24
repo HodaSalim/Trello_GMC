@@ -229,7 +229,7 @@ export const commentDelete = async (
     dispatch(deleteComment(commentId));
 
     submitCall = submitCall.then(() =>
-      axios.delete(
+      api.delete(
         baseUrl + "/" + boardId + "/" + listId + "/" + cardId + "/" + commentId
       )
     );
@@ -762,7 +762,7 @@ export const checklistItemTextSet = async (
     );
 
     submitCall = submitCall.then(() =>
-      axios.put(
+      api.put(
         baseUrl +
           "/" +
           boardId +
@@ -818,7 +818,7 @@ export const checklistItemDelete = async (
     );
 
     submitCall = submitCall.then(() =>
-      axios.delete(
+      api.delete(
         baseUrl +
           "/" +
           boardId +
@@ -862,7 +862,7 @@ export const startDueDatesUpdate = async (
     );
 
     submitCall = submitCall.then(() =>
-      axios.put(
+      api.put(
         baseUrl + "/" + boardId + "/" + listId + "/" + cardId + "/update-dates",
         {
           startDate,
@@ -896,7 +896,7 @@ export const dateCompletedUpdate = async (
     dispatch(updateDateCompletedOfCard({ listId, cardId, completed }));
 
     submitCall = submitCall.then(() =>
-      axios.put(
+      api.put(
         baseUrl +
           "/" +
           boardId +
@@ -938,7 +938,7 @@ export const attachmentAdd = async (
 
     let response = "";
     submitCall = submitCall.then(() =>
-      axios
+      api
         .post(
           baseUrl +
             "/" +
@@ -994,7 +994,7 @@ export const attachmentDelete = async (
     dispatch(deleteAttachmentOfCard({ listId, cardId, attachmentId }));
 
     submitCall = submitCall.then(() =>
-      axios.delete(
+      api.delete(
         baseUrl +
           "/" +
           boardId +
@@ -1035,7 +1035,7 @@ export const attachmentUpdate = async (
     );
 
     submitCall = submitCall.then(() =>
-      axios.put(
+      api.put(
         baseUrl +
           "/" +
           boardId +
@@ -1075,7 +1075,7 @@ export const coverUpdate = async (
     dispatch(updateCoverOfCard({ listId, cardId, color, isSizeOne }));
 
     submitCall = submitCall.then(() =>
-      axios.put(
+      api.put(
         baseUrl + "/" + boardId + "/" + listId + "/" + cardId + "/update-cover",
         {
           color: color,
